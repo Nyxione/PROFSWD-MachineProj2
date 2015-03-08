@@ -1,0 +1,15 @@
+<% provide(:title, "Upload") %>
+
+<p>
+	<h1 style="font-family: CuteTumblrFont; font-size:4em">Upload Song</h1>
+</p>
+
+<p>
+	<%= form_for(@song, :html => { :multipart => true }) do |f| %>
+		<%= f.file_field :uploaded_song %>
+		<%= f.submit "Upload" %>
+	<% end %>
+</p>
+
+<%= link_to "Back to Song List", songs_path %>
+

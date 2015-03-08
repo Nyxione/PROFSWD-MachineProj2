@@ -1,0 +1,34 @@
+<% provide(:title, "Home") %>
+
+<div class = "jumbotron">
+	<h1 style="font-family:CuteTumblrFont; font-size: 6em"><center> 
+		CATastrophe</center></h1>
+	
+	<hr>
+	
+	<div class="row" style="font-family:LongTime; letter-spacing:2px">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+			
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control' %> 
+
+			<%= f.label :email %> 
+			<%= f.text_field :email %> 
+			
+			<%= f.label :password %> 
+			<%= f.password_field :password, class: 'form-control' %> 
+
+			<%= f.label :password_confirmation, "Confirm Password" %>
+			<%= f.password_field :password_confirmation, class: 'form-control' %> 
+	
+
+			<%= f.submit "Create Account", class: "btn btn-lg btn-primary" %> 
+		<% end %>
+	</div>
+	
+	<h2>
+		Already have an account? <%= link_to "Log in here", login_path %> 
+	
+	 </h2> 
+</div>

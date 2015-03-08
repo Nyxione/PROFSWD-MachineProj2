@@ -1,0 +1,13 @@
+<% provide(:title, "Songs") %>
+
+<p>
+	<h1 style="font-family: CuteTumblrFont; font-size:4em">Uploaded Songs</h1>
+</p>
+
+<%= link_to "Upload New Song", new_song_path %> 
+
+<div id = 'ulsongs'>
+	<% for song in @songs %>
+		<%= link_to song.uploaded_song_file_name, playSong() %>
+	<% end %>
+</div>
